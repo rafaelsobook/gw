@@ -1,11 +1,12 @@
-import BABYLON from "./BabylonModule.js"
+import BabylonModules from "./BabylonModule.js"
 import "babylonjs-loaders"
 
 import loadScene from "./loadScene.js"
 import {setDisplayElem} from "../tools/tools.js"
 import getHeroDetail from "../serverApiFun/getHeroDetail.js"
+import { activateBtnOnce } from "../characterSystem/characterState.js"
 
-
+const {BABYLON} = BabylonModules
 let engine = new BABYLON.Engine(document.querySelector("canvas"), true)
 let scene = new BABYLON.Scene(engine);
 scene.createDefaultCamera()
@@ -38,5 +39,6 @@ async function main(){
         scene.render()
     })
     window.addEventListener("resize", () => engine.resize())
+    activateBtnOnce()
 }
 export default { main, scene,engine, changeScene, checkIfHeroCreated }

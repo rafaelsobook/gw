@@ -1,5 +1,6 @@
-import BABYLON from "../main/BabylonModule.js";
+import Bmodules from "../main/BabylonModule.js";
 import { importModel } from "../SceneLoaders/tools.js";
+const {BABYLON} = Bmodules
 const { MeshBuilder, SceneLoader, Color3, Vector3, StandardMaterial, Texture} = BABYLON
 
 export function createMaterial(scene, textureFileName, colorTexture, uVscaleTex){
@@ -74,7 +75,13 @@ export async function createOriginal(scene, pos, rotationY, textureDets, glbFile
     wallRoot.meshes.forEach(wallmsh => {
         const wallDet = textureDets.find(det => det.name === wallmsh.name)
         if(wallDet){
-            const wallMat = createMaterial(scene, wallDet.tex, false, wallDet.uScale)
+            let wallMat
+            if(wallDet.emissive){
+                wallMat = createMaterial(scene, wallDet.tex, wallDet.emissive, wallDet.uScale)
+            }else{
+                wallMat = createMaterial(scene, wallDet.tex, false, wallDet.uScale)
+            }
+            
             if(wallDet.isMetal) wallMat.metallic = 1
             if(wallDet.normal){                
                 const normalTex = new Texture(`./images/modeltex/${wallDet.normal}.jpg`, scene, false, true)

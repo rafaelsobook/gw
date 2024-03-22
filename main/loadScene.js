@@ -1,9 +1,10 @@
-import * as GUI from "babylonjs-gui"
+import BabylonModules from "./BabylonModule.js"
 //Scenes
 import wisemanVillage from "../scenes/wisemanVillage.js";
 import setupScene from "../scenes/setupScene.js";
 import loginRegisterScene from "../scenes/loginRegister.js"
 
+const {BABYLON, GUI} = BabylonModules
 export default async function loadScene(engine, currentStage, BABYLON, accountDetail){
     let scene;
     switch(currentStage){

@@ -2,7 +2,7 @@ import { playAnim, stopAnim } from "../tools/tools.js"
 
 
 export default function initPointerMovement(engine,scene,body,anims,charSpeed, BABYLON){
-    const unableToClicks = ['wall', 'gate', 'box', 'sement', 'stand']//dapat sa mga pathways walang gantong name
+    const unableToClicks = ['wall', 'gate', 'box', 'sement', 'stand', 'tavern']//dapat sa mga pathways walang gantong name
     let isMoving = false
     let pickedPos = undefined
     const {Vector3} = BABYLON
@@ -20,12 +20,14 @@ export default function initPointerMovement(engine,scene,body,anims,charSpeed, B
         unableToClicks.forEach(nme => {            
             if(clickedMeshName.includes(nme)) isUnableToclick=true
         })
-        if(isUnableToclick) return console.log("Clicked mesh unable to click")
+        if(isUnableToclick) {
+            stop()
+            return console.log("Clicked mesh unable to click")
+        }
         const {x,y,z} = pickInfo.pickedPoint
         pickedPos = pickInfo.pickedPoint
         body.lookAt(new Vector3(x, body.position.y, z), 0,0,0)
         const distance = Vector3.Distance(pickInfo.pickedPoint,{...body.position, y})
-        console.log(distance)
         
         if(distance < 1.2 || distance <= .1) return stop()
         playAnim(anims, "running", true)

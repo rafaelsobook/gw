@@ -1,3 +1,21 @@
+
+export function createIcon(iconName, GUI, parentPanelOrDynamicTex, cb){
+    const {Image, Button} = GUI
+
+    const button = Button.CreateImageWithCenterTextButton('button', '');
+    button.width = '40px';
+    button.height = '40px';
+    button.thickness = 0;
+
+    const image = new Image('icon', `./images/ui/${iconName}.png`);
+    console.log(image)
+    // Add the image to the button's content
+    button.addControl(image);
+
+    button.onPointerUpObservable.add(() => cb());
+    parentPanelOrDynamicTex.addControl(button)
+    return button
+}
 export function createGUIbtn(GUI, btnDetails){
     const {width,height,color,background,pt,btnName,label} = btnDetails
     var btn = GUI.Button.CreateSimpleButton(btnName, label);
@@ -8,7 +26,7 @@ export function createGUIbtn(GUI, btnDetails){
     btn.paddingTop = pt
     return btn
 }
-export function createPanel(GUI, panelDet, isLeft, DynamicTexture) {
+export function createPanel(GUI, panelDet, isLeft, DynamicTexture, isNotVertical) {
     const {width,height,background,pt,panelName} = panelDet
     const panel = new GUI.StackPanel(panelName)
     if(width)panel.width = width
@@ -18,7 +36,9 @@ export function createPanel(GUI, panelDet, isLeft, DynamicTexture) {
     panel.paddingTop = pt
     panel.paddingBottom = pt
 
+    panel.isVertical = isNotVertical ? false : true
     DynamicTexture && DynamicTexture.addControl(panel)
+
     return panel;
 }
 export function createTextBlock(GUI, textDetails, parent){
