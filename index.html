@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grim Wraith</title>
-  <script type="module" crossorigin src="/assets/index-DjNvl98a.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-DnlRaPly.css">
+  <script type="module" crossorigin src="/assets/index-DU_9fI3b.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BJGMdBNe.css">
 </head>
 <body>
     <section class="login-page">
         <div class="login-container">
             <button class="btn" id="continueBtn"> continue </button>
-            <img src="/assets/DBLoginForm-Ce1f8yQl.png" class="login-background"/>
+            <img src="/assets/loginForm2-BVA6EoRt.png" class="login-background"/>
             <input type="text" placeholder="Enter UserName"
             id="usernameInp" class="inputs" />
     
@@ -23,16 +23,25 @@
             id="confirmpass" class="inputs toreg" />
     
             <div class="login-cont-btns">
-                <button class="btn toreg toggleBtns">Cancel</button>
-                <button class="btn tologin" id="loginBtn">Login</button>            
-                <button class="btn toreg" id="registerBtn">Create</button>            
+                <button class="toreg toggleBtns">
+                    <img src="/assets/cancelicon-BRc8UuvH.png" class="button-img" />
+                </button>
+                <button class="tologin" id="loginBtn">
+                    <img src="/assets/loginicon-4pQDNg0P.png" class="button-img" />
+                </button>            
+                <button class="toreg" id="registerBtn">
+                    <img src="/assets/createicon-eoSLjtQY.png" class="button-img" />
+                </button>            
             </div>
     
-            <button class="btn tologin toreg-btn toggleBtns">Create Account</button>
+            <button class="tologin toreg-btn toggleBtns">
+                <img src="/assets/createicon-eoSLjtQY.png" class="button-img" />
+            </button>
         </div>
     </section>
     <div class="popup-container popstyle1 popup-close"><p class="pop-up-label">Error Server</p></div>
     <!-- loading screen -->
+    <p class="mini-loading screenFadeOff">Equiping ....</p>
     <div class="loading-screen screenFadeOff">
         <div class="loading-bx">
             <img src="" alt="" class="lc-img">
@@ -84,16 +93,65 @@
         </button>
     </div>
     <div class="inventory-container">
-        <button class="close-parent btn">X</button>
-        <p class="bx-title">Inventory</p>
-        <div class="slots-list">
-            <button class="slot-btn"></button>
-            <button class="slot-btn"></button>
-            <button class="slot-btn"></button>
-            <button class="slot-btn"></button>
-            <button class="slot-btn"></button>
-            <button class="slot-btn"></button>
+        <img src="/assets/xshield-CS2BYwf8.png" class="close-parent btn"/>
+        <div class="cont-bx armorycont">
+            <p class="bx-title">Armory</p>
+            <div class="armory-bx">
+                <div class="armory-list gears">
+                    <button class="eqpd-slot helmet"></button>
+                    <button class="eqpd-slot armor"></button>
+                    <button class="eqpd-slot belt"></button>
+                    <button class="eqpd-slot"></button>
+                </div>
+                <div class="bx-img-display">
+                    <img src="/assets/magCircle-BDG2boZ9.png" alt="" class="img-display">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAiWAAAIlgE7vdG5AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAmRQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwJ9uSAAAAMt0Uk5TAAECAwUGCAkKCwwNDhASExQVFhgZGhscHh8gISIkJSYqLC0uMDEyMzQ1Njc4OTs8PT4/QEFCQ0RFRkdISUtNTlBRU1RVVllaW1xfYWJjZGVmZ2hpamtsbW5vcHFzdHZ4e3x9fn+AgoOFhoeKi42Oj5CRkpOUlZeYmZucnZ6foqOkpaipqqytrrCxs7S1tre4uru8vb6/wMHCw8TFxsjJysvNztDR0tPU1dfY2drb3N3e3+Dh4uPk5efp6uvs7u/x8vP09fj5+vv8/f4AgjfwAAAFjklEQVQYGcXBj1vV1QHH8bds07qiQrkf1YhlxTCJpkxhxAqHLp0TcSt/osMfpSuXJGipWYhoht0Zha2mM6b5Y6Pa0jVzJjaJrvD5p3bO+XKBPc/3dp9nu+fc1wv+D4lVZ1KpM6sS5EntgJyBWvKiPKVRqXLy4azGnCUPSjVBKeGt0AQrCG+dJlhHeOs0wTqCm5TUBMlJhDZb/2U2wfVogh7CK9EEJeTBaY05TT7M05h55MUHGvUB+dGtUd3kxzGNOkZ+XNSoi+TFgxrzIHlw/2WNuXw/gc1s6B7RBCPdDTMJ5famzr8rxt86m24ngAUDymhgAd5V3NTXuFmBZzOu62tdn4Ffm5TFJvw6ryzO49XklLJITcan+5TVffhUpqzK8KlcWZXj0xxlNQefHlZWD+NTpbKqxKe5ymouPlUpqyp8mq+s5uNTjbKqwadHldWj+LRcWS3Hp+2yhhVrRNZ2fOqU1alYXbI68em8rAeGFGPoAVnn8WjasIzP+UwxPuOqjOFp+FMn600uKMZFjsmqw59dsvbyrmK8y25Zu/Cm8AtZv+WoYhxlm6wvCvFlvZzVvKoYr7Jaznp8+UjOY+xVjL08JucjPKlUZBZtitHGLEUq8WO9nOEEOxRjB4lhOevxo01OL2xTjG3QK6cNP5JyVsJzivEcrJSTxI9+Wali2KcY+6A4JasfLwqGZL0GHFGMI8ARWUMF+HC3nIeAU4pxEvihnLvxoVbW20DxLcVIFQHHZdXiwxpZ1UCTYq0AfiRrDT7slnESo0ex3sTolbEbH3pkzAeKbilWqgiolNGDB4lrkk5gLFEGSzF+L+lagtzbI6MKo1UZtGFUyNhDzlXLuDIJ44/K4E9Y/5BRTY5NvSyjE+Mbg8rgy29hdMq4PJXceknW6xg/UEZlGEdlvUROVct5B+MRZVSNcUJONTk09ZKc9zB+rIzqMN6Tc2kqubNBJ2Qdx/iJMnoc47isP2gDudP31k5ZBzF+qox+hnFQ1vO9feTOojvOydqJUaeMFmLslHXujkXk0Ez9Raf/fWszxixlVI6xeeTGaf1VM8mlpcPbv2r//OxGjEJlVITRfO5q+1fbh5eSSy+/0fzx1n81r8UaUAY3sX7dfHXrx83Jl8mlZSWNPav7Eo9gndW4LS0adwGrItG3uqex9BfkVn1r7StEXte48nKNO0bkldrWenKtqLigkMgujbvrLo1rJ1JYUFyER80ad9ttGreBMBo0ZhAGNaaBMMo05hJc0pgywpgyrLQ+6FPa8BQC6VdaEpJK6yeUw0o7AAeUdphQtiptC2xR2lZCWai0JbBEaQsJpURpFVChtBJCKRjUqCIo0qjBAoJ5X5EbGDcUeZ9wuhQ5g3FGkS7CaVOkC6NLkTbC2azIsxjPKrKZcJoUacRoVKSJcOoVqcKoUqSecCoVmY4xXZFKwrlXzic4n8i5l3CmyTmMc1jONMK5R04LToucewinTs5ynF/KqSOcFjkNOPVyNhFOj5wanHlyegnmm4Ny5uI8JOfLyYTyPUUW49QrUkoo31WkGWetIiWE8m1FduL8TpHvE8oMRQ7hHFLkOwRzRU4XTpeca4TzmpwOnA453YTzGzn7cfbLaSGc+XLacdrlLCCcxJCsp3GeljWUIKCkrCdxnpSVJKQmWYtwFslqIqQ7R2TU4NTIGLmToE7JWIyzWMYpwtooYxXOKhkbCatUxjM4z8goJbB+SS/ivCipn9BekJTEeUPSC4S2RtIVnE8lrSG0p2QUY0yX8RShrZRRjVEl41eE1ihjA8ZaGY2EtkxGB8Z+GcsIrVXGBYw/y2glsCnXZYwUw7RbMq5PIawn5PwcGuQ8QVh75ByAfXL2ENYOOf+ET+U8T1gFs1s6Ot758FBBwaEPTx7saJlTwP/mP7nW82nLVA3MAAAAAElFTkSuQmCC" alt="" class="img-display body-img">
+                </div>
+                <div class="armory-list weapon-accessory">
+                    <button class="eqpd-slot weapon">
+                        <!-- <img src="./images/items/equipable/frostbite.png" alt="" class="slot-img slot-rare"> -->
+                    </button>
+                    <button class="eqpd-slot cloak"></button>
+                    <button class="eqpd-slot"></button>
+                    <button class="eqpd-slot"></button>
+                </div>
+            </div>
         </div>
+        <div class="cont-bx">
+            <p class="bx-title">Inventory</p>
+            <div class="slots-list">
+                <button class="slot-btn">
+                    <!-- <img src="./images/items/swords/frostbite.png" alt="" class="slot-img"> -->
+                </button>
+                <button class="slot-btn"></button>
+                <button class="slot-btn"></button>
+                <button class="slot-btn"></button>
+                <button class="slot-btn"></button>
+                <button class="slot-btn"></button>
+            </div>
+        </div>
+    </div>
+    <div class="item-info-cont">
+        <img src="/assets/xshield-CS2BYwf8.png" class="close-parent btn"/>
+        <div class="img-ttle">
+            <div class="img-bx">
+                <img src="/assets/border-BDFXTpm0.png" alt="" class="img-border">
+                <img src="/assets/frostbite-B5qGaY_n.png" alt="" class="item-img">
+            </div>            
+            <p class="item-ttle">Frost Bite</p>
+        </div>
+        <p class="item-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit, doloremque! Aspernatur aliquam modi reprehenderit nobis impedit .</p>
+        <div class="item-btns">
+            <button id="sellItemBtn" class="item-btn btn">
+                <p class="item-lbl">sell</p>
+                <span class="item-selling-price">x 100</span>
+            </button>
+            <button id="equipItemBtn" class="item-btn btn">equip</button>
+        </div>
+    </div>
+    <!-- When Obtain an Item will popup on top screen -->
+    <div class="acquired-lists">
+       
     </div>
     <!-- Interact Button -->
     <button id="interactBtn">
